@@ -14,15 +14,23 @@
 
 
 ### To Check the node and NPM version 
+
 ![](/Assets/version-check.png)
 
 ### To Create a React App using Vite
+
 ![](/Assets/0.png)
+
 >cd your-path
+
 ![](/Assets/create-vite-project.png)
+
 > npm create vite@latest app-name
+
 > cd app-name
+
 > npm install
+
 > ![](/Assets/npm-run-dev.png)
 > npm run dev
 > 
