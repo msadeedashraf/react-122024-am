@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <title>React</title>
+  </head>
+  <body>
+    <div id="myDiv"></div>
+
+    <script type="text/babel">
+      function Hello() {
+        return <h1>Hello World</h1>;
+      }
+
+      function Greetings() {
+        return <h3>Welcome to CBC!</h3>;
+      }
+
+      function Header() {
+        return <h3>Welcome to CBC!</h3>;
+      }
+
+      function Main() {
+        return (
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+            adipisci ducimus velit sunt cupiditate harum dolore placeat earum
+            dicta eligendi explicabo temporibus accusamus, recusandae debitis
+            dolorem aut sed? Laboriosam nam porro illum voluptatem consequatur
+            repudiandae perspiciatis vitae molestiae magnam accusantium ipsam
+            ut, error ducimus facere esse nisi est eum. Molestiae esse
+            doloremque, labore laborum expedita sapiente distinctio fuga quasi
+            possimus, praesentium quae dolorem eum excepturi neque voluptatem in
+            earum aperiam est repellendus quo consequatur commodi laudantium
+            itaque? Perferendis repudiandae quod eos ad veniam ut. Fugit
+            similique architecto id accusantium doloremque molestiae, esse
+            itaque perferendis recusandae mollitia sed quos perspiciatis dolore
+            in nesciunt quasi porro dolor inventore? Quo fuga eaque, deleniti
+            dignissimos voluptates eligendi sint dicta consequuntur vel illum,
+            error temporibus qui animi nihil impedit ducimus laboriosam officiis
+            ipsum tempore ullam eius! Id impedit illo laborum saepe fuga hic
+            odio, quos explicabo soluta minima doloremque esse consequatur,
+            obcaecati ullam, sunt vero. Impedit itaque deserunt eligendi nihil
+            corporis, error voluptatibus qui neque nam fugiat reiciendis ipsa
+            facere. Iste architecto culpa fugiat repellat est nihil rerum, odio
+            animi consequatur deleniti, assumenda quibusdam illo maiores dolor
+            doloribus distinctio similique, modi dicta tenetur molestiae
+            nesciunt. Provident tempora voluptas beatae officia, fuga saepe
+            architecto ratione laudantium.
+          </p>
+        );
+      }
+
+      function Footer() {
+        return <p>Copy rights reserved</p>;
+      }
+
+      const container = document.getElementById("myDiv");
+      const root = ReactDOM.createRoot(container);
+
+      root.render(
+        <div>
+          <Header />
+          <Main />
+          <Footer />
+        </div>
+      );
+    </script>
+  </body>
+</html>
