@@ -29,8 +29,10 @@
 
 > cd app-name
 
+> ![](/Assets/npm-install.png)
+
 > npm install
 
 > ![](/Assets/npm-run-dev.png)
-> npm run dev
-> 
+
+> npm run dev 
