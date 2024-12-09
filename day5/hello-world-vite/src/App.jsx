@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+ <>
+
+<header>
+      <h1>JobZila</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="job_search.html">Job Search</a></li>
+          <li><a href="job_listing.html">Job Listing</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section  id="hero">
+        <section id="hero-section">
+
+            <h2>Welcome to JobZila</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex veniam quaerat porro beatae neque omnis atque harum molestiae aliquam nesciunt at amet velit voluptas natus vitae, itaque voluptatibus provident sint laborum error tempora accusamus quidem voluptate iure! Omnis reiciendis ipsum ullam, nam consectetur iusto impedit ratione eius, beatae laboriosam non.</p>
+
+        </section>
+      </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Job Board. All right reserved. | <a href="contact.html">Contact Us</a>  | <a href="terms.html">Terms</a> | <a href="privacy.html">Privacy</a></p>
+    </footer>
+ </>
+
+    )
 }
 
 export default App
