@@ -1,8 +1,18 @@
 import './App.css'
+import Footer from './Footer'
+import Mainsection from './Mainsection'
+import Header from './Header'
+
 function App() {
   return (
     <>
-    <h1>Welcome to CBC!</h1>
+    <Header/>
+   <Mainsection/>
+   <Footer/>
+
+   
+
+   
     </>
   )
 }
