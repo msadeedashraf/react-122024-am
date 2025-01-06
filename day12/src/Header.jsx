@@ -1,11 +1,11 @@
 
 
 const Header = () => {
+    //const headingStyles = 
   return (
-    <>
-    <h1>Groceries List</h1>
-    </>
-  )
+<header>
+    Groceries List
+    </header>  )
 }
 
 export default Header

@@ -7,8 +7,37 @@ const Content = () => {
         const i = Math.floor(Math.random()*4);
         return myname[i];
       }
+
+      const handleClick = () => {
+
+        console.log("Clicked it")
+      }
+
+      const handleClick2 = (name) => {
+
+        console.log(`${name} Clicked it`)
+      }
+      /*
+      const handleClick3 = (e) => {
+
+        console.log(e.target.innerText);
+      }
+*/
+
+
+
   return (
-    <h1>Hello {namechange()}</h1>
+    <main>
+        <p>
+
+        <h1>Hello {namechange()}</h1>
+        </p>
+<button  onClick={handleClick}>Click it</button>
+<button  onClick={() => handleClick2('Alan')}>Click it</button>
+
+
+
+    </main>
   )
 }
 
