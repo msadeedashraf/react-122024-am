@@ -17,12 +17,12 @@ const Content = () => {
 
         console.log(`${name} Clicked it`)
       }
-      /*
+      
       const handleClick3 = (e) => {
-
+        console.log(e);
         console.log(e.target.innerText);
       }
-*/
+
 
 
 
@@ -34,6 +34,7 @@ const Content = () => {
         </p>
 <button  onClick={handleClick}>Click it</button>
 <button  onClick={() => handleClick2('Alan')}>Click it</button>
+<button  onClick={(e) => handleClick3(e)}>Click 3</button>
 
 
 
