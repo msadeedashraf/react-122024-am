@@ -36,3 +36,6 @@
 > ![](/Assets/npm-run-dev.png)
 
 > npm run dev 
+>
+> https://www.npmjs.com/package/react-icons
+> npm i react-icons
