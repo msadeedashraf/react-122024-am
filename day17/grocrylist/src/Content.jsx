@@ -4,7 +4,12 @@ import{FaTrashAlt} from "react-icons/fa"
 
 const Content = () => {
 
-  
+  //const [] = useState();
+
+ 
+
+
+
   const [items, setItems] = useState(
 [
   {
@@ -23,13 +28,39 @@ const Content = () => {
     checked : false,
     item : "Eggs"
   
+  },
+  {
+    id : 4,
+    checked : false,
+    item : "Eggs"
+  
+  },
+  {
+    id : 5,
+    checked : false,
+    item : "Eggs"
+  
   }
 ]
   );
     
   
-  
+  const handleCheck = (id) => {
 
+   // console.log(`key : ${id}`);
+   const listItems = items.map((item)=> item.id === id ? {...item, checked : !item.checked} : item );
+
+   setItems(listItems);
+
+   localStorage.setItem('mylist',JSON.stringify(listItems));
+  }
+
+
+  const handleDelete = (id) => {
+
+    console.log(id);
+
+  }
 
 
   return (
@@ -40,9 +71,12 @@ const Content = () => {
 
 items.map((item)=>(
   <li className="item" key={item.id}>
-    <input type="checkbox" checked={item.checked} />
-    <label> {item.item}</label>
-    <FaTrashAlt role="button" tabIndex="0"/>
+    <input type="checkbox" onChange={()=> handleCheck(item.id)} checked={item.checked} />
+    <label 
+    
+    style={(item.checked)? {textDecoration:'line-through'} : null}
+    onClick={()=> handleCheck(item.id)}> {item.item}</label>
+    <FaTrashAlt onClick={()=> handleDelete(item.id)} role="button" tabIndex="0"/>
   
   </li>
   
