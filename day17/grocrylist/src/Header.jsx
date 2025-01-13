@@ -1,11 +1,18 @@
+/* eslint-disable react/prop-types */
 
 
-const Header = () => {
+const Header = ({title}) => {
     //const headingStyles = 
   return (
 <header>
-    Groceries List
+    <h1>{title}</h1>
     </header>  )
 }
+
+Header.defaultProps = {
+
+  title:'My G List'
+}
+
 
 export default Header

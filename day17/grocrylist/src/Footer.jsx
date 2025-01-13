@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 //import React from 'react'
 
-const Footer = () => {
+const Footer = ({length, year}) => {
   return (
    <footer>
 
-    <p>copyright &copy; 2024</p>
+    <p>{length} List {length === 1 ? "item" : "items"} , copyright &copy; {year}</p>
    </footer>
   )
 }
