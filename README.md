@@ -1,5 +1,7 @@
 ### MEAN vs MERN
-[MEAN vs MERN](https://www.oracle.com/database/mean-mern/)
+[MEAN vs 
+
+](https://www.oracle.com/database/mean-mern/)
 
 ### Useful Resources
 [React Learn](https://react.dev/learn)
