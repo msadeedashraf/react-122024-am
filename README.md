@@ -41,3 +41,11 @@
 >
 > https://www.npmjs.com/package/react-icons
 > npm i react-icons
+>
+> https://www.npmjs.com/package/json-server
+> npm i json-server
+> 
+>--create a folder data and create list.json file in that folder
+> npx json-server -p 3500 -w .\data\list.json
+>
+> 

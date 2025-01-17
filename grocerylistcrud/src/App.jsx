@@ -2,28 +2,35 @@
 import Content from "./Content";
 import Header from "./Header";
 import Footer from "./Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './App.css'
 import AddItem from "./AddItem";
 import SearchItem from "./SearchItem";
-import { use } from "react";
+
 
 function App() {
   
   const [items, setItems] = useState(   
-  JSON.parse(localStorage.getItem('mylist'))    
+  JSON.parse(localStorage.getItem('mylist')) || []   
   );
 
 const [newItem, setNewItem] = useState('');   
 
 const [search, setSearch] = useState('');
 
+//useEffect(()=>{}, []);
 
-const setAndSaveItems = (newItems) => {
+useEffect(()=>{localStorage.setItem('mylist',JSON.stringify(items));}, [items] );
 
-  setItems(newItems);
-  localStorage.setItem('mylist',JSON.stringify(newItems));
-}
+
+//const [count , setCount] = useState(0);
+//useEffect(()=>console.log("My name is sadeed"));
+//useEffect(()=>console.log("My name is sadeed"), []);
+//useEffect(()=>{ setTimeout(()=>{setCount((count)=>count+1)},1000) },[]);
+//useEffect(()=>{ setTimeout(()=>{setCount((count)=>count+1)},1000) },[items]);
+//console.log(`Increase the count by ${count}`)
+
+
 
 const addItem = (item) => {
 
@@ -33,7 +40,8 @@ const addItem = (item) => {
   //console.log(items);
   const listItems = [...items,myNewItem]
   //console.log(listItems);
-  setAndSaveItems(listItems);
+  //setAndSaveItems(listItems);
+  setItems(listItems);
           
 
 }
@@ -43,8 +51,7 @@ const addItem = (item) => {
           
              // console.log(`key : ${id}`);
              const listItems = items.map((item)=> item.id === id ? {...item, checked : !item.checked} : item );
-          
-             setAndSaveItems(listItems);
+             setItems(listItems);
             }
           
           
@@ -53,8 +60,7 @@ const addItem = (item) => {
                
               //console.log(id);
               const listItems = items.filter(( item)=> item.id !== id );
-          
-              setAndSaveItems(listItems);
+              setItems(listItems);
             }
 
 const handleSubmit = (e) => {
