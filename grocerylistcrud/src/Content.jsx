@@ -8,7 +8,7 @@ const Content = ({items,handleCheck, handleDelete}) => {
   
     
   return (
-    <main>
+    <>
       {
       items.length ? 
       (
@@ -18,8 +18,10 @@ const Content = ({items,handleCheck, handleDelete}) => {
       ( <p style={{marginTop:'2rem',marginBottom:'2rem', color:'red'}} >Your list is empty</p> )
       }
 
+    </>
     
-    </main>
+    
+   
   )
 }
 

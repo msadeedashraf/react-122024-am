@@ -8,19 +8,85 @@ import AddItem from "./AddItem";
 import SearchItem from "./SearchItem";
 
 
+
 function App() {
+
+  const API_URL = "http://localhost:3500/items";
   
-  const [items, setItems] = useState(   
-  JSON.parse(localStorage.getItem('mylist')) || []   
-  );
+const [items, setItems] = useState([]);
 
 const [newItem, setNewItem] = useState('');   
 
 const [search, setSearch] = useState('');
 
+const [fetchError, setFetchError] = useState(null);
+const [isLoading, setIsLoading] = useState(true);
+
 //useEffect(()=>{}, []);
 
-useEffect(()=>{localStorage.setItem('mylist',JSON.stringify(items));}, [items] );
+//useEffect(  () => {}, [] );
+
+/*
+const fetchItems = async () => {
+try {}
+catch (err) {}
+}
+*/
+
+
+
+
+
+
+useEffect(  () => {
+  const fetchItems = async () => {
+    try {
+      const response = await fetch(API_URL);
+      //console.log(response);
+      if(!response.ok) throw Error('Did not receive data');
+      const listItems = await response.json();
+      setItems(listItems);
+      setFetchError(null);
+      
+      //console.log(listItems);
+    }
+    catch (err) {
+    //  console.log(err.stack);
+    setFetchError(err.message)
+    }
+    finally
+    {
+      setIsLoading(false);
+    }
+    };
+
+    setTimeout((async ()=> await fetchItems())(),5000);
+    //(async ()=> await fetchItems())();
+    
+}, [] );
+
+/*
+useEffect(  () => {
+  const fetchMonkey = async () => {
+    try {
+      const response = await fetch("https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/MonkeysApp/monkeydata.json");
+      console.log(response);
+      const listMonkey = await response.json();
+      //setItems(listItems);
+      console.log(listMonkey);
+    }
+    catch (err) {console.log(err.stack);}
+    };
+
+    fetchMonkey();
+    
+}, [] );
+
+*/
+
+
+
+//useEffect(()=>{localStorage.setItem('mylist',JSON.stringify(items));}, [items] );
 
 
 //const [count , setCount] = useState(0);
@@ -87,6 +153,14 @@ setNewItem('')
       handleSubmit={handleSubmit}
      />
      <SearchItem search={search} setSearch={setSearch}/>
+    
+    <main>
+
+{isLoading && <p>Loading Item list...</p>}
+
+    {fetchError && <p style={{color:"red"}}>{`Error : ${fetchError}`}</p>}
+    {!fetchError && !isLoading &&
+    
     <Content 
         length={items.length}
         items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))} 
@@ -94,6 +168,10 @@ setNewItem('')
         handleCheck={handleCheck}
         handleDelete={handleDelete}
     />
+}
+
+    </main>
+    
     <Footer length={items.length} year = '2025'/>
     </>
   )
