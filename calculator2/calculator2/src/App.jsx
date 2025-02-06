@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { use } from 'react';
+
 import { NumericFormat } from 'react-number-format';
 
 function App() {
