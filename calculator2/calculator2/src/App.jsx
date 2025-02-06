@@ -99,6 +99,7 @@ const equals = (e) => {
 
 };
 
+/*
 function trailingZeros(str)
 {
   console.log(str);
@@ -106,6 +107,7 @@ function trailingZeros(str)
   console.log(str.toFixed(10).replace(/0+$/, ''));
   return str.toFixed(10).replace(/0+$/, '');
 }
+*/
 
 function precisionNumber(str)
 {
